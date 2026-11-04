@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000">
+
+    <SurfaceView
+        android:id="@+id/surface"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <TextView
+        android:id="@+id/toast"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="#CC000000"
+        android:paddingStart="18dp"
+        android:paddingEnd="18dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/controls"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#66000000"
+        android:padding="8dp">
+
+        <!-- top bar -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+            <TextView android:id="@+id/btnBack" style="@style/Nuke.Btn" android:text="‹" android:textSize="28sp" />
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/badge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#FF4D1A"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <!-- middle -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal">
+            <TextView android:id="@+id/btnRw" style="@style/Nuke.Btn" android:text="⏪" android:textSize="30sp" />
+            <TextView android:id="@+id/btnPlay" style="@style/Nuke.Btn" android:layout_marginStart="30dp" android:layout_marginEnd="30dp" android:text="⏸" android:textSize="44sp" />
+            <TextView android:id="@+id/btnFf" style="@style/Nuke.Btn" android:text="⏩" android:textSize="30sp" />
+        </LinearLayout>
+
+        <!-- seek bar -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+            <TextView android:id="@+id/cur" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0:00" android:textColor="#FFFFFF" />
+            <SeekBar
+                android:id="@+id/seek"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:max="1000"
+                android:progressTint="#FF4D1A"
+                android:thumbTint="#FF4D1A" />
+            <TextView android:id="@+id/dur" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0:00" android:textColor="#FFFFFF" />
+        </LinearLayout>
+
+        <!-- tools -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="5">
+            <TextView android:id="@+id/btnBg" style="@style/Nuke.Btn" android:layout_width="0dp" android:layout_weight="1" android:text="🎧\nBackground" />
+            <TextView android:id="@+id/btnPip" style="@style/Nuke.Btn" android:layout_width="0dp" android:layout_weight="1" android:text="🗔\nPopup" />
+            <TextView android:id="@+id/btnSpeed" style="@style/Nuke.Btn" android:layout_width="0dp" android:layout_weight="1" android:text="⚡\n1×" />
+            <TextView android:id="@+id/btnFit" style="@style/Nuke.Btn" android:layout_width="0dp" android:layout_weight="1" android:text="⤢\nFit" />
+            <TextView android:id="@+id/btnNext" style="@style/Nuke.Btn" android:layout_width="0dp" android:layout_weight="1" android:text="⏭\nNext" />
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>
